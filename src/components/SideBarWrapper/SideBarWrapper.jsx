@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import SideBar from "../SideBar/SideBar";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { AppActions } from "../../redux/actions/app-actions";
 
 function SideBarWrapper({
     children
 }){
     const dispatch = useDispatch();
+    const { hash } = useLocation();
 
     const contentContainerStyle = {
         scrollBehavior : 'smooth',
@@ -15,6 +17,16 @@ function SideBarWrapper({
     useEffect(()=>{
         const contentContainer = document.querySelector('.content-container');
         const titleBlocks = document.getElementsByClassName('content-block');
+
+        if(titleBlocks){
+            for(let i = 0 ; i < titleBlocks?.length; i++){
+                const block = titleBlocks[i];
+                const blockId = `#${block?.getAttribute('id')}`;
+                if(hash === blockId){
+                    block.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        }
 
         const checkViewPort = (event) => {
             const currentTop = contentContainer?.scrollTop + contentContainer?.offsetTop ;
