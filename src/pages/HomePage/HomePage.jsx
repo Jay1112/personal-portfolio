@@ -9,7 +9,7 @@ function HomePage(){
                 <Content key={'desktop-content'} />
             </SideBarWrapper>
             <NavBarWrapper>
-                <Content key={'mobile-content'} />
+                {/* <Content key={'mobile-content'} /> */}
             </NavBarWrapper>
         </>
     );
