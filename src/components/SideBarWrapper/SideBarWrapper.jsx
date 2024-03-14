@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import SideBar from "../SideBar/SideBar";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";

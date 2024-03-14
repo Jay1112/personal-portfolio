@@ -1,16 +1,25 @@
 import SideBarWrapper from '../../components/SideBarWrapper/SideBarWrapper';
 import NavBarWrapper from '../../components/NavBarWrapper/NavBarWrapper';
 import Content from '../../components/Content/Content';
+import useWindowSize from '../../hooks/useWindowSize';
 
 function HomePage(){
+    const { size } = useWindowSize();
+
     return (
         <>
-            <SideBarWrapper>
-                <Content key={'desktop-content'} />
-            </SideBarWrapper>
-            <NavBarWrapper>
-                <Content key={'mobile-content'} />
-            </NavBarWrapper>
+            {
+                size >= 480 && 
+                <SideBarWrapper>
+                    <Content key={'desktop-content'} />
+                </SideBarWrapper>
+            }
+            {
+                size.width < 480 &&
+                <NavBarWrapper>
+                    <Content key={'mobile-content'} />
+                </NavBarWrapper>
+            }
         </>
     );
 }
