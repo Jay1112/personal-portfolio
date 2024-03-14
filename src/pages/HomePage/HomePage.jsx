@@ -6,10 +6,12 @@ import useWindowSize from '../../hooks/useWindowSize';
 function HomePage(){
     const { size } = useWindowSize();
 
+    console.log(size);
+
     return (
         <>
             {
-                size >= 480 && 
+                size.width >= 480 && 
                 <SideBarWrapper>
                     <Content key={'desktop-content'} />
                 </SideBarWrapper>
