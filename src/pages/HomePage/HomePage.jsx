@@ -11,13 +11,13 @@ function HomePage(){
     return (
         <>
             {
-                size.width >= 480 && 
+                size.width >= 768 && 
                 <SideBarWrapper>
                     <Content key={'desktop-content'} />
                 </SideBarWrapper>
             }
             {
-                size.width < 480 &&
+                size.width < 768 &&
                 <NavBarWrapper>
                     <Content key={'mobile-content'} />
                 </NavBarWrapper>

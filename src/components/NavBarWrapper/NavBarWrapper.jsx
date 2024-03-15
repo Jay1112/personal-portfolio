@@ -29,11 +29,15 @@ function NavBarWrapper({
         }
 
         const checkViewPort = (event) => {
-            const currentTop = contentContainer?.scrollTop + contentContainer?.offsetTop ;
+            let currentTop = contentContainer?.scrollTop + contentContainer?.offsetTop ;
+            let delta = 1 ;
             if(currentTop && titleBlocks){
                 for(let i = 0 ; i < titleBlocks?.length ; i++){
                     const startingPoint = titleBlocks[i]?.offsetTop;
                     const endingPoint = startingPoint + titleBlocks[i]?.offsetHeight ;
+                    if(i === titleBlocks?.length - 1){
+                        currentTop = currentTop + delta;
+                    }
                     if(startingPoint <= currentTop && currentTop <= endingPoint){
                         dispatch({ type : AppActions.SET_SELECTED_MENU_KEY, payload : i + 1 });
                     }

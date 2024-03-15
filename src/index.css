@@ -40,10 +40,27 @@
     border: 1px solid red;
 }
 
+.common-word-spacing {
+    word-spacing: 10px;
+}
+
+.common-box-shadow {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
 .fade-up {
     opacity: 0; /* Initially set opacity to 0 */
     transform: translateY(50px); /* Initially move the element down by 20px */
     animation: fadeUpAnimation 1s ease-in-out forwards; /* Apply the animation */
+}
+
+.scale-up-down {
+    animation: scaleUpAndDownAnimation 1s ease-in-out alternate infinite; /* Apply the animation */
+    animation-delay: 1s;
+}
+
+.commmon-gradient {
+    background: linear-gradient(to right,#7c3aed,#4f46e5);
 }
 
 @keyframes fadeUpAnimation {
@@ -54,6 +71,15 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes scaleUpAndDownAnimation {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 1.1;
     }
 }
 
