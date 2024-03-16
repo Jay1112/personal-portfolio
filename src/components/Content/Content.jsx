@@ -1,4 +1,5 @@
 import TitleStripe from '../../components/TitleStripe/TitleStripe';
+import Intro from '../Intro/Intro';
 
 function Content(){
 
@@ -6,6 +7,7 @@ function Content(){
         <div className="w-full">
             <div className='w-full'>
                 <div id="home" className="w-full min-h-[calc(100vh-128px)] md:min-h-[calc(100vh-48px)] h-auto relative content-block flex items-stretch justify-center">
+                    <Intro />
                 </div>
                 <div id="work" className="w-full min-h-[calc(100vh-128px)] md:min-h-[calc(100vh-48px)] h-auto relative content-block">
                     <TitleStripe title={'Work Experience'}></TitleStripe>

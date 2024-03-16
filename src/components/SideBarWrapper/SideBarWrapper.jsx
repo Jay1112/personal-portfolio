@@ -33,8 +33,12 @@ function SideBarWrapper({
             if(currentTop && titleBlocks){
                 for(let i = 0 ; i < titleBlocks?.length ; i++){
                     const startingPoint = titleBlocks[i]?.offsetTop;
+                    const id = titleBlocks[i]?.getAttribute('id');
                     const endingPoint = startingPoint + titleBlocks[i]?.offsetHeight ;
                     if(startingPoint <= currentTop && currentTop <= endingPoint){
+                        if(id !== 'home'){
+                            window.history.pushState(null, null, `#${id}`);
+                        }
                         dispatch({ type : AppActions.SET_SELECTED_MENU_KEY, payload : i + 1 });
                     }
                 }

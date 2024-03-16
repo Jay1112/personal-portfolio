@@ -1,7 +1,7 @@
 import NavBar from '../../components/NavBar/NavBar';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AppActions } from '../../redux/actions/app-actions';
 
 function NavBarWrapper({
@@ -29,16 +29,17 @@ function NavBarWrapper({
         }
 
         const checkViewPort = (event) => {
-            let currentTop = contentContainer?.scrollTop + contentContainer?.offsetTop ;
             let delta = 1 ;
+            let currentTop = contentContainer?.scrollTop + contentContainer?.offsetTop + delta ;
             if(currentTop && titleBlocks){
                 for(let i = 0 ; i < titleBlocks?.length ; i++){
                     const startingPoint = titleBlocks[i]?.offsetTop;
+                    const id = titleBlocks[i]?.getAttribute('id');
                     const endingPoint = startingPoint + titleBlocks[i]?.offsetHeight ;
-                    if(i === titleBlocks?.length - 1){
-                        currentTop = currentTop + delta;
-                    }
                     if(startingPoint <= currentTop && currentTop <= endingPoint){
+                        if(id !== 'home'){
+                            window.history.pushState(null, null, `#${id}`);
+                        }
                         dispatch({ type : AppActions.SET_SELECTED_MENU_KEY, payload : i + 1 });
                     }
                 }

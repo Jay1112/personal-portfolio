@@ -49,13 +49,13 @@
 }
 
 .fade-up {
-    opacity: 0; /* Initially set opacity to 0 */
-    transform: translateY(50px); /* Initially move the element down by 20px */
-    animation: fadeUpAnimation 1s ease-in-out forwards; /* Apply the animation */
+    opacity: 0; 
+    transform: translateY(50px);
+    animation: fadeUpAnimation 1s ease-in-out forwards;
 }
 
 .scale-up-down {
-    animation: scaleUpAndDownAnimation 1s ease-in-out alternate infinite; /* Apply the animation */
+    animation: scaleUpAndDownAnimation 1s ease-in-out alternate infinite; 
     animation-delay: 1s;
 }
 
