@@ -1,7 +1,7 @@
 import NavBar from '../../components/NavBar/NavBar';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { AppActions } from '../../redux/actions/app-actions';
 
 function NavBarWrapper({
@@ -57,7 +57,7 @@ function NavBarWrapper({
 
     return (
         <div className="flex flex-col md:hidden w-screen h-screen overflow-x-hidden overflow-y-auto items-start justify-start bg-[var(--primary)]">
-            <div className='fade-up py-4 px-4 flex items-center justify-center flex-col w-full overflow-y-auto'>
+            <div className='py-4 px-4 flex items-center justify-center flex-col w-full overflow-y-auto'>
                 <div className="w-full theme rounded-md">
                     <NavBar />
                 </div>
